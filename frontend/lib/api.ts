@@ -1,13 +1,12 @@
-export class ApiError extends Error {
-  status: number;
-  details: unknown;
+import { ApiError } from "@/lib/api-error";
+import { demoRouter } from "@/lib/demo/router";
 
-  constructor(status: number, message: string, details?: unknown) {
-    super(message);
-    this.status = status;
-    this.details = details;
-  }
-}
+export { ApiError } from "@/lib/api-error";
+
+// Demo mode answers every request from in-memory seed data so the site is
+// fully browsable on Vercel without a backend. It is ON by default; set
+// NEXT_PUBLIC_DEMO=0 to talk to a real API (the Docker full-stack build).
+const DEMO = process.env.NEXT_PUBLIC_DEMO !== "0";
 
 // On the server we talk to the API directly (inside Docker that is the
 // `backend` service); in the browser everything goes through the Next rewrites.
@@ -40,6 +39,10 @@ export async function apiFetch<T>(
   }
   if (token) {
     headers.set("Authorization", `Bearer ${token}`);
+  }
+
+  if (DEMO) {
+    return (await demoRouter(path, { ...options, headers }, token)) as T;
   }
 
   const response = await fetch(`${API_BASE}/api${path}`, { ...options, headers, cache: "no-store" });

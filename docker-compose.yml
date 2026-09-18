@@ -32,6 +32,8 @@ services:
     environment:
       # Used by the Next.js rewrites and by server-side data fetching.
       BACKEND_URL: http://backend:8000
+      # The Docker build bakes demo mode OFF (real backend above).
+      NEXT_PUBLIC_DEMO: "0"
     depends_on:
       backend:
         condition: service_healthy

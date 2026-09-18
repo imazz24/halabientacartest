@@ -18,7 +18,7 @@ COPY . .
 # host has to be known here. Compose always names the service `backend`;
 # override with --build-arg BACKEND_URL=... for another topology.
 ARG BACKEND_URL=http://backend:8000
-ENV NEXT_TELEMETRY_DISABLED=1     BACKEND_URL=$BACKEND_URL
+ENV NEXT_TELEMETRY_DISABLED=1     BACKEND_URL=$BACKEND_URL     NEXT_PUBLIC_DEMO=0
 # Linux has the native SWC binary, so the Windows `--webpack` workaround in the
 # npm script is not needed here.
 RUN npx next build
