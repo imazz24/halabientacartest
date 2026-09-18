@@ -123,8 +123,8 @@ export default function LoyaltyChecker() {
             <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-primary p-6 text-white">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{t("loyalty.code")}</p>
-                <p className="mt-1 font-mono text-lg font-bold tracking-widest text-accent">{account.loyalty_code}</p>
-                <p className="mt-1 text-xs text-slate-400">{account.phone_number}</p>
+                <p className="mt-1 font-mono text-lg font-bold tracking-widest text-accent"><span className="ltr">{account.loyalty_code}</span></p>
+                <p className="mt-1 text-xs text-slate-400"><span className="ltr">{account.phone_number}</span></p>
               </div>
               <div className="text-right">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{t("loyalty.balance")}</p>

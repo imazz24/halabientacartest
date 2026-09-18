@@ -194,3 +194,16 @@ body {
     @apply border border-accent/25;
   }
 }
+
+/* Phone numbers and codes are weak-direction text: with no strong letter the
+   bidi algorithm flips them around when the page is in RTL (Arabic). Isolate
+   them and force LTR so they always render in the right order. */
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+a[href^="tel:"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+}

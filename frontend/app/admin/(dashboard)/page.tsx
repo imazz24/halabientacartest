@@ -128,7 +128,7 @@ export default function DashboardPage() {
                 </span>
                 <div className="min-w-0">
                   <p className="truncate text-sm font-semibold text-ink">{customer.full_name}</p>
-                  <p className="truncate text-xs text-slate-500">{customer.phone_number} · {customer.email || t("admin.dashboard.noEmail")}</p>
+                  <p className="truncate text-xs text-slate-500"><span className="ltr">{customer.phone_number}</span> · {customer.email || t("admin.dashboard.noEmail")}</p>
                 </div>
               </Link>
             ))}

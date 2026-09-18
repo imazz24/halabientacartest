@@ -118,8 +118,8 @@ export default function AdminLoyaltyPage() {
               <tbody className="divide-y divide-line">
                 {accounts.map((account) => (
                   <tr key={account.id} className="transition hover:bg-surface">
-                    <td className="px-5 py-4 font-mono font-bold tracking-wider text-accent-dark">{account.loyalty_code}</td>
-                    <td className="px-5 py-4 font-medium text-ink">{account.phone_number}</td>
+                    <td className="px-5 py-4 font-mono font-bold tracking-wider text-accent-dark"><span className="ltr">{account.loyalty_code}</span></td>
+                    <td className="px-5 py-4 font-medium text-ink"><span className="ltr">{account.phone_number}</span></td>
                     <td className="px-5 py-4">
                       <span className="font-extrabold text-ink">{account.points_balance}</span>{" "}
                       <span className="text-xs text-slate-400">{t("admin.loyalty.pts")}</span>

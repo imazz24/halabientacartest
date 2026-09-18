@@ -100,6 +100,7 @@ export default function PhoneField({
           inputMode="tel"
           autoComplete="tel-national"
           value={national}
+          dir="ltr"
           placeholder={placeholder}
           onChange={(event) => emit(country.dial, event.target.value)}
           className="w-full bg-transparent px-3.5 py-2.5 text-sm text-ink outline-none placeholder:text-slate-400"

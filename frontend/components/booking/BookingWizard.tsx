@@ -329,7 +329,7 @@ export default function BookingWizard({ car, locations }: BookingWizardProps) {
               </div>
               <div>
                 <p className="text-xs text-slate-400">{t("booking.success.customerPhone")}</p>
-                <p className="font-semibold text-ink">{String(customerPhoneLabel())}</p>
+                <p className="font-semibold text-ink"><span className="ltr">{String(customerPhoneLabel())}</span></p>
               </div>
             </div>
           </div>

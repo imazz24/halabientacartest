@@ -86,7 +86,7 @@ export default function AdminCustomersPage() {
                         <span className="font-semibold text-ink">{customer.full_name}</span>
                       </div>
                     </td>
-                    <td className="px-5 py-3.5 text-slate-600">{customer.phone_number}</td>
+                    <td className="px-5 py-3.5 text-slate-600"><span className="ltr">{customer.phone_number}</span></td>
                     <td className="px-5 py-3.5 text-slate-500">{customer.email || "—"}</td>
                     <td className="px-5 py-3.5 font-semibold text-ink">{customer.total_bookings}</td>
                     <td className="px-5 py-3.5 text-slate-600">{customer.active_rentals}</td>

@@ -68,7 +68,7 @@ export default function CustomerDetailPage({ params }: CustomerDetailProps) {
           </span>
           <div className="min-w-0 flex-1">
             <h1 className="text-2xl font-extrabold text-ink">{customer.full_name}</h1>
-            <p className="text-sm text-slate-500">{customer.phone_number} · {customer.email || t("admin.dashboard.noEmail")}</p>
+            <p className="text-sm text-slate-500"><span className="ltr">{customer.phone_number}</span> · {customer.email || t("admin.dashboard.noEmail")}</p>
             <p className="mt-0.5 text-xs text-slate-400">{t("admin.customers.since", { when: formatDateTime(customer.created_at, locale) })}</p>
           </div>
           <div className="flex gap-6 text-center">
